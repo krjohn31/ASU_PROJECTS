@@ -47,7 +47,8 @@ public class Visualizer extends JFrame implements ActionListener,KeyListener,
 	public static int POLAR2D_STATE=1;
 	public static int VISUALIZATION_STATE=CARTESIAN2D_STATE;
 	//public static int VISUALIZATION_STATE=POLAR2D_STATE;
-	
+	private int zoomLimit = 0;
+	    
 	String VERSION="Math graphics 2.0.1 ";
 	
 	JPanel center=null;
@@ -946,22 +947,26 @@ public class Visualizer extends JFrame implements ActionListener,KeyListener,
 	 * 
 	 */
 	private void zoom(int i) {
+		
+		
 		calc.zoom(i);
 		double alfa=1.0;
 		if(i>0){
 			alfa=0.5;
+			zoomLimit++;
 		}
 		else {
 			alfa=2.0;
-			
+			zoomLimit--;
 		}
-		int dx=(int) ((WIDTH/2-calc.x0)*(1-1.0/alfa));
-		int dy=(int) ((HEIGHT/2-calc.y0)*(1-1.0/alfa));
-		calc.moveCenter(dx,dy);
-		draw();
+		if (zoomLimit < 7 && zoomLimit > -10) {
+			int dx=(int) ((WIDTH/2-calc.x0)*(1-1.0/alfa));
+			int dy=(int) ((HEIGHT/2-calc.y0)*(1-1.0/alfa));
+			calc.moveCenter(dx,dy);
+			draw();
+		
+		}
 	}
-
-
 
 
 
