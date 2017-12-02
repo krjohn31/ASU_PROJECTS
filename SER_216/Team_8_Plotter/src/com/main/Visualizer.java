@@ -959,7 +959,7 @@ public class Visualizer extends JFrame implements ActionListener,KeyListener,
 			alfa=2.0;
 			zoomLimit--;
 		}
-		if (zoomLimit < 7 && zoomLimit > -10) {
+		if (zoomLimit < 10 && zoomLimit > -10) {
 			int dx=(int) ((WIDTH/2-calc.x0)*(1-1.0/alfa));
 			int dy=(int) ((HEIGHT/2-calc.y0)*(1-1.0/alfa));
 			calc.moveCenter(dx,dy);
