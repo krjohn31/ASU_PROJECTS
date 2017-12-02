@@ -1,0 +1,157 @@
+package test;
+
+
+
+import static org.testng.Assert.assertEquals;
+
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.AfterTest;
+import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Test;
+import com.maths.ParseFunction;
+
+/**
+ * This program tests the ParseFunction class for the correct output 
+ * of the parseFunction method.
+ * @author Kyle Johnson
+ * @version 1.2
+ */
+public class ParseFunctionTest {
+	
+		
+	/**
+ 	 * Tests the sine function along with the divide calculation 
+ 	 * for correct output.
+ 	 */
+	@Test
+	public void testSin() {
+		ParseFunction function = new ParseFunction();
+		function.setFunction("sin(18/2)");
+		assertEquals(0.412118,function.parseFunction());
+	}
+	
+	/**
+ 	 * Tests the cosine function along with the power calculation 
+ 	 * for correct output.
+ 	 */
+	@Test
+	public void testCos() {
+		ParseFunction function = new ParseFunction();
+		function.setFunction("cos(4^2)");
+		assertEquals(-0.957659,function.parseFunction());
+	}
+	
+	/**
+ 	 * Tests the tangent function along with the addition calculation 
+ 	 * for correct output.
+ 	 */
+	@Test
+	public void testTan() {
+		ParseFunction function = new ParseFunction();
+		function.setFunction("tan(2+1)");
+		assertEquals(-0.142547,function.parseFunction());
+	}
+	
+
+	/**
+ 	 * Tests the natural logarithim function for correct output.
+ 	 */
+	@Test
+	public void testLog() {
+		ParseFunction function = new ParseFunction();
+		function.setFunction("log(2)");
+		assertEquals(0.693147,function.parseFunction());
+	}
+	
+	/**
+ 	 * Tests the Euler's number function  raised to a given power for correct output.
+ 	 */
+	@Test
+	public void testExp() {
+		ParseFunction function = new ParseFunction();
+		function.setFunction("exp(2)");
+		assertEquals(7.389056,function.parseFunction());
+	}
+	
+	/**
+ 	 * Tests the arc sine function along with the subtraction calculation 
+ 	 * for correct output.
+ 	 */
+	@Test
+	public void testAsin() {
+		ParseFunction function = new ParseFunction();
+		function.setFunction("asin(2-1)");
+		assertEquals(1.570796,function.parseFunction());
+	}
+	
+	/**
+ 	 * Tests the arc cosine function for correct output.
+ 	 */
+	@Test
+	public void testAcos() {
+		ParseFunction function = new ParseFunction();
+		function.setFunction("acos(1)");
+		assertEquals(0.0,function.parseFunction());
+	}
+	
+	/**
+ 	 * Tests the arc tangent function for correct output.
+ 	 */
+	@Test
+	public void testAtan() {
+		ParseFunction function = new ParseFunction();
+		function.setFunction("atan(1)");
+		assertEquals(0.785398,function.parseFunction());
+	}
+	
+	/**
+ 	 * Tests the hyperbolic sine function for correct output.
+ 	 */
+	@Test
+	public void testSinh() {
+		ParseFunction function = new ParseFunction();
+		function.setFunction("sinh(2)");
+		assertEquals(3.62686,function.parseFunction());
+	}
+	
+	/**
+ 	 * Tests the hyperbolic cosine function for correct output.
+ 	 */
+	@Test
+	public void testCosh() {
+		ParseFunction function = new ParseFunction();
+		function.setFunction("cosh(2)");
+		assertEquals(3.762196,function.parseFunction());
+	}
+	
+	/**
+ 	 * Tests the hyperbolic tangent function for correct output.
+ 	 */
+	@Test
+	public void testTanh() {
+		ParseFunction function = new ParseFunction();
+		function.setFunction("tanh(2)");
+		assertEquals(0.964028,function.parseFunction());
+	}
+	
+	/**
+ 	 * Tests the absolute value function along with the multiplication
+ 	 * calculation for correct output.
+ 	 */
+	@Test
+	public void testAbs() {
+		ParseFunction function = new ParseFunction();
+		function.setFunction("abs(3*-2)");
+		assertEquals(6.0,function.parseFunction());
+	}
+	
+	/**
+ 	 * Tests the square root function for correct output.
+ 	 */
+	@Test
+	public void testSqrt() {
+		ParseFunction function = new ParseFunction();
+		function.setFunction("sqrt(121)");
+		assertEquals(11.0,function.parseFunction());
+	}
+}
